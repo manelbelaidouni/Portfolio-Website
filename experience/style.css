@@ -7,7 +7,6 @@
   box-sizing: border-box;
   text-decoration: none;
   outline: none; border: none;
-  text-transform:capitalize;
   transition: all .2s linear;
 }
 html{
@@ -464,3 +463,70 @@ header .navbar ul li a:hover{
   top: calc(100% - 12rem);
 }
 /* scroll top ends */
+.btn-voir-plus {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #4f2ab4; /* rose clair, à adapter */
+  color: white;
+  text-decoration: none;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  transition: background-color 0.3s ease;
+}
+
+.btn-voir-plus:hover {
+  background-color: #ff66aa;
+}
+
+.about-details {
+  padding: 40px;
+  max-width: 900px;
+  margin: auto;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.about-details h1 {
+  text-align: center;
+  color: #333;
+  margin-bottom: 30px;
+}
+
+.info-card {
+  background-color: #ebcade;
+  border-radius: 16px;
+  box-shadow: 0 12px 24px rgba(0,0,0,0.1);
+  padding: 20px 30px;
+  margin-bottom: 30px;
+  transition: transform 0.4s ease;
+}
+
+.info-card:hover {
+  transform: translateY(-5px);
+}
+
+.info-card h2 {
+  color: #cc3399; /* rose foncé pour le style */
+  margin-bottom: 10px;
+}
+
+.inner-card {
+  background-color: #f9e6f0; /* couleur plus claire ou différente */
+  box-shadow: none;
+  margin-top: 15px;
+  padding: 15px 20px;
+  border: 2px dashed #cc3399;
+}
+
+.info-card p {
+  color: #555;
+  line-height: 1.6;
+}
+
+.btn-retour {
+  display: block;
+  width: fit-content;
+  margin: 20px auto;
+  color: #cc3399;
+  text-decoration: none;
+  font-weight: bold;
+}
