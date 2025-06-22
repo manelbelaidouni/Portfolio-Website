@@ -104,17 +104,21 @@ function showSkills(skills) {
     skillsContainer.innerHTML = skillHTML;
 }
 
-// Affichage des compétences transversales (à ajouter)
 fetch("softskills.json")
   .then(response => response.json())
   .then(data => {
-    const softContainer = document.getElementById("softSkillsContainer");
+    const container = document.getElementById("softSkillsContainer");
 
     data.forEach(skill => {
-      const item = document.createElement("div");
-      item.className = "card-skill";
-      
-      softContainer.appendChild(item);
+      const div = document.createElement("div");
+      div.className = "card-skill";
+      div.innerHTML = `
+        <div class="info">
+          <h3>${skill.skill}</h3>
+          <p>${skill.example}</p>
+        </div>
+      `;
+      container.appendChild(div);
     });
   });
 
