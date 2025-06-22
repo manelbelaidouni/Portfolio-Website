@@ -82,9 +82,9 @@ var typed = new Typed(".typing-text", {
 async function fetchData(type = "skills") {
     let response
     type === "skills" ?
-        response = await fetch("/Portfolio-Website/skills.json")
+        response = await fetch("skills.json")
         :
-        response = await fetch("/Portfolio-Website/projects/projects.json")
+        response = await fetch("./projects/projects.json")
     const data = await response.json();
     return data;
 }
@@ -105,7 +105,7 @@ function showSkills(skills) {
 }
 
 // Affichage des compétences transversales (à ajouter)
-fetch("/Portfolio-Website/softskills.json")
+fetch("softskills.json")
   .then(response => response.json())
   .then(data => {
     const softContainer = document.getElementById("softSkillsContainer");
@@ -113,11 +113,7 @@ fetch("/Portfolio-Website/softskills.json")
     data.forEach(skill => {
       const item = document.createElement("div");
       item.className = "card-skill";
-      item.innerHTML = `
-  <span><strong>${skill.skill}</strong></span>
-  <p>${skill.example}</p>
-`;
-
+      
       softContainer.appendChild(item);
     });
   });
@@ -128,7 +124,7 @@ function showProjects(projects) {
     projects.slice(0, 10).filter(project => project.category != "android").forEach(project => {
         projectHTML += `
         <div class="box tilt">
-      <img draggable="false" src="/Portfolio-Website/assets/images/projects/${project.image}.png" alt="project" />
+      <img draggable="false" src="/assets/images/projects/${project.image}.png" alt="project" />
       <div class="content">
         <div class="tag">
         <h3>${project.name}</h3>
